@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="shortcut icon" href="assets/logo_3.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">Thong</p>
+                <span class="nav-dot" >@</span>
+            </div>
+            <div class="nav-menu" id="myNavMenu">
+                <ul class="nav_menu_list">
+                    <li class="nav_list">
+                        <a href="#home" class="nav-link">Home</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#about" class="nav-link">About</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <div class="circle"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn" id="downloadBtn">Download CV<i class="uil uil-file-download-alt"></i></button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <!-- ------ Home Section ------ -->
+        <main class="wrapper">
+            <section class="featured-box" id="home">
+                <div class="featured-text">
+                    <div class="featured-text-card">
+                        <span>Thong Truong</span>
+                    </div>
+                    <div class="featured-name">
+                        <p>I'm <span class="typedText">Software Developer</span></p>
+                    </div>
+                    <div class="featured-text-info">
+                        <p>I'm a developer who loves digging into code, always keen to learn more, and ambitious enough to keep the bugs at bay!</p>
+                    </div>
+                    <div class="featured-text-btn">
+                        <button class="btn blue-btn">Hire me<i class="uil uil-crosshair"></i></button>
+                        <button class="btn" id="downloadBtn1">Download CV <i class="uil uil-file-download-alt"></i></button>
+                    </div>
+                    <div class="social_icons">
+                        <div class="icon github"><a href="https://github.com/truonghoangthong" target="_blank"><i class="uil uil-github-alt"></a></i></div>
+                        <div class="icon linkedin"><a href="https://www.linkedin.com/in/thong-truong-a96396352/" target="_blank"><i class="uil uil-linkedin-alt"></a></i></div>
+                        <div class="icon whatsapp"><a href="https://wa.me/+358417220772" target="_blank"><i class="uil uil-whatsapp"></a></i></div>
+                        <div class="icon instagram"><a href="https://www.instagram.com/thong.truong777/" target="_blank"><i class="uil uil-instagram"></a></i></div>
+                    </div>
+                </div>
+                <!-- ------ Home Section (image) ------ -->
+                <div class="featured-image">
+                    <div class="image">
+                        <img src="assets/avatar.png" alt="avatar" class = 'avatar_img'>
+                    </div>
+                </div>
+                <div class="scroll-icon-box">
+                    <a href="#about" class="scroll-btn">
+                        <i class="uil uil-mouse-alt"></i>
+                        <p>Scroll Down</p>
+                    </a>
+                </div>
+            </section>
+            <!-- ------ About ------ -->
+             <section class="section" id="about">
+                <div class="top-header">
+                    <h1>About Me</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="about-info">
+                            <h3>My introduction</h3>
+                            <p>Hi, I’m a software developer who loves coding. I know Python, JavaScript, HTML, CSS, and SQL, and I’ve worked with different tools and libraries. I enjoy learning and building things that help people, always trying to do my best.</p>
+                            <div class="about-btn">
+                                <button class="btn" id="downloadBtn2">Download CV<i class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">    
+                        <div class="academic-info">
+                            <h3>Academic Background</h3>
+                            <p><i class="uil uil-university"></i> LAB University of Applied Sciences</p>
+                            <p><i class="uil uil-graduation-cap"></i> Bachelor of Engineering</p>
+                            <p><i class="uil uil-book-open"></i> Industrial Information Technology</p>
+                            <p><i class="uil uil-calendar-alt"></i> 2023-2027</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="col1">
+                        <div class="skills-box">
+                            <div class="skill-header">
+                                <h3>Programming & Frameworks</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>Python</span>
+                                <span>JavaScript</span>
+                                <span>HTML, CSS</span>
+                                <span>Node.js</span>
+                                <span>Django</span>
+                                <span>Express.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1">
+                        <div class="skills-box">
+                            <div class="skill-header">
+                                <h3>Databases</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>PostgreSQL</span>
+                                <span>MySQL</span>
+                                <span>InfluxDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1">
+                        <div class="skills-box">
+                            <div class="skill-header">
+                                <h3>Cloud & Tools</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>Azure</span>
+                                <span>Google Cloud Platform</span>
+                                <span>Alibaba Cloud</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1">
+                        <div class="skills-box">
+                            <div class="skill-header">
+                                <h3>Specialized Skills</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>Raspberry Pi Pico</span>
+                                <span>Web Scraping (BeautifulSoup)</span>
+                                <span>Pandas, NumPy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+            <!-- ------ Projects ------ -->
+            <section class="section" id="projects">
+                <div class="top-header">
+                    <h1>Projects</h1>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+</html>
