@@ -44,3 +44,38 @@ document.getElementById("downloadBtn2").addEventListener("click", function() {
   link.href = cvLink;
   link.click();  
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  (function(){
+      emailjs.init("uas-KBxUIhZrQ_Drg"); 
+  })();
+
+  function showMessage(message, type) {
+      const messageDiv = document.querySelector('.form-message');
+      messageDiv.textContent = message;
+      messageDiv.className = `form-message ${type} show`; 
+
+      setTimeout(() => {
+          messageDiv.className = 'form-message'; 
+          messageDiv.textContent = '';
+      }, 3000);
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          message: document.getElementById('message').value
+      };
+
+      emailjs.send('service_aze95au', 'template_v9z6spt', formData)
+          .then(function(response) {
+              showMessage('Your message has been sent successfully!', 'success');
+              document.getElementById('contact-form').reset(); 
+          }, function(error) {
+              showMessage('Failed to send email. Please try again later.', 'error');
+          });
+  });
+});
