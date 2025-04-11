@@ -154,44 +154,48 @@ const sr = ScrollReveal({
   window.addEventListener('scroll', scrollActive)
 
   document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.col2');
+    const projectBoxes = document.querySelectorAll('.project-box');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    const projectBoxes = document.querySelectorAll('.project-box');
-    
-    const boxWidth = projectBoxes[0].offsetWidth; // 490px (450px + 20px padding mỗi bên)
-    const gap = 40;
-    const scrollAmount = boxWidth + gap; // 530px (khoảng cách giữa các project)
-    let currentIndex = 0; // Chỉ số project hiện tại
+    let currentIndex = 0;
 
-    console.log('Box Width:', boxWidth);
-    console.log('Scroll Amount:', scrollAmount);
-    console.log('Total Projects:', projectBoxes.length);
+    function showProject(index, direction = 'next') {
+        if (index < 0 || index >= projectBoxes.length) return;
 
-    // Cuộn đến project theo chỉ số
-    function scrollToProject(index) {
-        if (index < 0 || index >= projectBoxes.length) return; // Giới hạn chỉ số
-        slider.scrollTo({
-            left: index * scrollAmount,
-            behavior: 'smooth'
+        if (currentIndex !== index) {
+            projectBoxes[currentIndex].classList.remove('active');
+            projectBoxes[currentIndex].style.transform = 
+                direction === 'next' ? 'translateX(-100%)' : 'translateX(100%)';
+            projectBoxes[currentIndex].style.opacity = '0';
+        }
+
+        projectBoxes[index].style.left = '0';
+        projectBoxes[index].style.transform = 
+            direction === 'next' ? 'translateX(0)' : 'translateX(0)';
+        projectBoxes[index].classList.add('active');
+        projectBoxes[index].style.opacity = '1';
+
+        projectBoxes.forEach((box, i) => {
+            if (i !== index) {
+                box.style.left = direction === 'next' ? '100%' : '-100%';
+                box.style.transform = 'translateX(0)';
+            }
         });
+
         currentIndex = index;
     }
 
-    // Nút Next
     nextBtn.addEventListener('click', () => {
         if (currentIndex < projectBoxes.length - 1) {
-            scrollToProject(currentIndex + 1);
+            showProject(currentIndex + 1, 'next');
         }
     });
 
-    // Nút Prev
     prevBtn.addEventListener('click', () => {
         if (currentIndex > 0) {
-            scrollToProject(currentIndex - 1);
+            showProject(currentIndex - 1, 'prev');
         }
     });
 
-    // Khởi tạo ở project đầu tiên
-    scrollToProject(0);
+    showProject(0);
 });
