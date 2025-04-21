@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["Software Developer","Data Engineer",],
+  strings : ["Software Developer","Data Engineer","DevOps Engineer",],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
