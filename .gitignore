@@ -4,6 +4,5 @@ server.js
 package.json
 package-lock.json
 yarn.lock
-vercel.json
 Dockerfile
 .dockerignore
